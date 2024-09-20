@@ -110,7 +110,9 @@ struct ContentView: View {
     }
     
     func playAudio() {
-        let soundFile = NSDataAsset(name: "442")!
+        guard let soundFile = NSDataAsset(name: "442") else {
+            return
+        }
         audioPlayer = try? AVAudioPlayer(data: soundFile.data, fileTypeHint: "wav")
         audioPlayer?.play()
         audioPlayer?.numberOfLoops = -1
