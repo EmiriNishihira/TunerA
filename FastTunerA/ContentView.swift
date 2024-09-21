@@ -23,10 +23,6 @@ struct ContentView: View {
                     Text("442hz")
                         .padding()
                         .foregroundColor(.black)
-                    Image("music")
-                        .scaleEffect(isBeating ? 1.5 : 1.0)
-                        .animation(.easeInOut(duration: 1).repeatForever(), value: isBeating)
-                        .onAppear { isBeating = true }
                     
                     Button {
                         isPause.toggle()
